@@ -1,1175 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yap info</title>
+<meta name="description" content="Portfolio of Yeasin Arafat Payek: computer engineer and roboticist building combat robots, drones and autonomous machines, and learning deep learning.">
+<meta property="og:title" content="Yeasin Arafat Payek | Roboticist &amp; Computer Engineer">
+<meta property="og:description" content="Combat robots, drones and autonomous machines built from scratch.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/Robot/ro1.jpg">
+<meta name="theme-color" content="#14181d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314181d'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='%2327f5b4'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14181d;--panel:#1c222a;--line:#2c3541;--text:#e9e6df;--mute:#9aa6b2;--hazard:#27f5b4;--max:1080px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--hazard);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;line-height:1.05;letter-spacing:.01em}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:32px}
+section{padding:88px 0}
+.stripe{height:10px;overflow:hidden}
+.stripe i{display:block;height:100%;width:calc(100% + 40px);background:repeating-linear-gradient(-45deg,var(--hazard) 0 14px,var(--bg) 14px 28px);animation:belt 2.4s linear infinite}
+@keyframes belt{to{transform:translateX(-39.6px)}}
+.progress{position:fixed;top:0;left:0;width:100%;height:3px;background:var(--hazard);transform:scaleX(0);transform-origin:0 50%;z-index:20}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.w>span{display:inline-block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.w:nth-child(2)>span{animation-delay:.12s}.w:nth-child(3)>span{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.fi{opacity:0;transform:translateY(12px);animation:fi .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--t,0s)}
+@keyframes fi{to{opacity:1;transform:none}}
+#top .role{min-height:1.4em}
+.caret{display:inline-block;width:3px;height:1.05em;margin-left:5px;background:var(--hazard);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 
-    <title>Yeasin Arafat </title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+nav{position:sticky;top:0;z-index:10;background:rgba(20,24,29,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{font:700 1.4rem "Barlow Condensed",sans-serif;text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav ul a{text-decoration:none;color:var(--mute);font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+nav ul a:hover,nav ul a.on{color:var(--text);border-color:var(--hazard)}
 
-    <!-- Favicons -->
-    <link href="assets/img/icon.png" rel="icon">
-    <link href="assets/img/icon.png" rel="apple-touch-icon">
+#top{padding:96px 0 72px}
+#top h1{font-size:clamp(3.4rem,13vw,8.5rem);font-weight:700;text-transform:uppercase;line-height:.92}
+#top .role{margin-top:22px;color:var(--hazard);font:600 clamp(1.2rem,3vw,1.6rem) "Barlow Condensed",sans-serif;letter-spacing:.04em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{position:relative;display:inline-block;padding:14px 30px;border:2px solid var(--hazard);border-radius:12px;background:rgba(39,245,180,.06);color:var(--text);text-decoration:none;font-weight:700;letter-spacing:.01em;overflow:hidden;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,color .25s}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn:focus-visible{background:var(--hazard);color:#14181d}
+.btn:active{transform:translateY(0) scale(.98)}
+@media (hover:hover){.btn:hover{background:var(--hazard);color:#14181d;transform:translateY(-3px);box-shadow:0 12px 32px rgba(39,245,180,.4)}.btn:hover::after{left:130%}}
+.links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-size:.98rem}
+.ic{width:1.15em;height:1.15em;flex:none}
+.links a{display:inline-flex;align-items:center;gap:8px;color:var(--mute);text-underline-offset:4px;transition:color .2s,transform .25s cubic-bezier(.2,.8,.2,1)}
+.links a:focus-visible{color:var(--hazard);transform:scale(1.1)}
+@media (hover:hover){.links a:hover{color:var(--hazard);transform:scale(1.1)}}
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+.about{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.about p{max-width:62ch}.about p+p{margin-top:16px}
+.about .big{font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.55;color:var(--text);margin-bottom:22px}
+.facts{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 28px;color:var(--mute);font-size:.95rem}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;list-style:none;padding:0}
+.skills li{border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.9rem}
+.skills li.hl{border-color:var(--hazard);color:var(--hazard)}
+
+.proj{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+.proj article{background:var(--panel);border-radius:4px;overflow:hidden;border:1px solid var(--line);transition:border-color .3s,transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.proj article:hover{border-color:var(--hazard)}
+.proj article img{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.proj article:hover img{transform:scale(1.05)}
+.proj img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.proj div{padding:20px 22px 24px}
+.proj h3{font-size:1.6rem;margin-bottom:4px}
+.proj .tag{color:var(--hazard);font-size:.9rem;margin-bottom:8px}
+.proj p{color:var(--mute);font-size:.98rem}
+
+.papers{max-width:760px}
+.paper{padding:30px 0;border-top:1px solid var(--line)}
+.paper:last-child{border-bottom:1px solid var(--line)}
+.paper .tag{color:var(--hazard);font-size:.95rem}
+.paper h3{font-size:clamp(1.5rem,3.4vw,1.9rem);margin:8px 0 14px}
+.paper p:not(.tag){color:var(--mute)}
+.paper .btn{margin-top:20px}
+.proj article{cursor:pointer}
+.vd{display:inline-block;margin-top:14px;color:var(--hazard);font-weight:600;font-size:.95rem}
+.proj article:hover .vd{text-decoration:underline;text-underline-offset:4px}
+.pj-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line)}
+#pjc{color:var(--mute);font-weight:600}
+#pjx{font-size:1rem;font-weight:600;color:var(--hazard);padding:6px 0}
+#pjx:hover{text-decoration:underline;text-underline-offset:4px}
+.pj-body{flex:1;min-height:0;display:grid;grid-template-columns:1.15fr 1fr}
+.pj-img{background:#0a0d11;display:flex;align-items:center;justify-content:center;padding:24px;min-height:0}
+.pj-img img{flex:1;min-width:0;max-width:100%;max-height:calc(100vh - 130px);object-fit:contain;border-radius:6px;touch-action:pan-y}
+#pji.sw{animation:ph .35s cubic-bezier(.2,.8,.2,1)}
+.pj-nav{flex:none;font-size:3rem;line-height:1;padding:12px 10px;color:var(--hazard);transition:transform .2s}
+.pj-nav:hover{transform:scale(1.15)}
+.pj-txt{overflow-y:auto;padding:48px clamp(24px,4vw,56px)}
+.pj-txt .tag{color:var(--hazard);font-size:.95rem}
+.pj-txt h3{font-size:clamp(2rem,4vw,3rem);margin:8px 0 20px}
+#pjd p{color:var(--mute);max-width:56ch}
+#pjd p+p{margin-top:14px}
+.pj-txt.sw>*{opacity:0;animation:fi .6s cubic-bezier(.2,.8,.2,1) forwards}
+.pj-txt.sw>:nth-child(2){animation-delay:.08s}
+.pj-txt.sw>:nth-child(3){animation-delay:.16s}
+@media (max-width:760px){
+  .pj-body{grid-template-columns:1fr;grid-template-rows:auto auto;overflow-y:auto;align-content:start}
+  .pj-img{padding:16px}.pj-img img{max-height:42vh}
+  .pj-txt{overflow:visible;padding:24px 20px 40px}
+}
+.team p{max-width:62ch;margin-bottom:28px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.shots img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;cursor:zoom-in}
+.shots.team-shots img{cursor:default}
+.sub{color:var(--mute);margin:-18px 0 32px;max-width:56ch}
+.albums{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:36px 28px}
+.album{all:unset;display:block;cursor:pointer;box-sizing:border-box}
+.album:focus-visible{outline:2px solid var(--hazard);outline-offset:8px}
+.stack{position:relative;display:block;aspect-ratio:4/3}
+.stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;border:3px solid var(--bg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.stack img:nth-child(1){transform:rotate(-5deg) translate(-6px,4px)}
+.stack img:nth-child(2){transform:rotate(4deg) translate(6px,2px)}
+.album:hover .stack img:nth-child(1),.album:focus-visible .stack img:nth-child(1){transform:rotate(-10deg) translate(-24px,6px)}
+.album:hover .stack img:nth-child(2),.album:focus-visible .stack img:nth-child(2){transform:rotate(9deg) translate(24px,4px)}
+.album:hover .stack img:nth-child(3),.album:focus-visible .stack img:nth-child(3){transform:translateY(-6px)}
+.meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px}
+.meta b{font:700 1.6rem "Barlow Condensed",sans-serif;font-weight:700}
+.meta small{color:var(--mute)}
+body.lock{overflow:hidden}
+dialog{border:0;padding:0;background:#0d1014;color:var(--text);width:100vw;height:100vh;max-width:none;max-height:none}
+dialog[open]{display:flex;flex-direction:column;animation:dlg .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes dlg{from{opacity:0;transform:scale(.97)}}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line)}
+.lb-top span{font-weight:600}
+dialog button{background:none;border:0;color:var(--text);cursor:pointer}
+#lbx{font-size:2rem;line-height:1;padding:0 6px}
+.lb-main{flex:1;min-height:0;display:flex;align-items:center;justify-content:space-between;padding:8px}
+.lb-main button{font-size:3rem;padding:12px 14px;color:var(--hazard)}
+#lbi{flex:1;min-width:0;max-height:100%;object-fit:contain;touch-action:pan-y}
+#lbi.sw{animation:ph .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes ph{from{opacity:0;transform:scale(1.025)}}
+.lb-th{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;border-top:1px solid var(--line)}
+.lb-th button{flex:none;width:64px;height:48px;padding:0;border:2px solid transparent;border-radius:4px;overflow:hidden;opacity:.55;transition:opacity .2s,border-color .2s}
+.lb-th button.on{opacity:1;border-color:var(--hazard)}
+.lb-th img{width:100%;height:100%;object-fit:cover}
+
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mute);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv,.fi,.w>span{opacity:1;transform:none;transition:none;animation:none}.stripe i,dialog[open],#lbi.sw,#pji.sw,.caret{animation:none}.stack img,.proj img,.proj article,.btn,.btn::after,.links a{transition:none}.pj-txt.sw>*{opacity:1;animation:none}.pj-nav{transition:none}.pj-nav:hover{transform:none}.btn:hover,.links a:hover{transform:none}}
+@media (max-width:760px){
+  nav ul{gap:10px}nav ul a{font-size:.85rem}
+  section{padding:64px 0}
+  .about{grid-template-columns:1fr;gap:28px}.about img{max-width:260px}
+}
+@media (max-width:480px){nav .brand{display:none}nav .wrap{justify-content:center}}
+</style>
 </head>
-
 <body>
-    <!-- ======= Mobile nav toggle button ======= -->
-    <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-    <!-- ======= Header ======= -->
-    <header id="header" class="d-flex flex-column justify-content-center">
-
-        <nav id="navbar" class="navbar nav-menu">
-            <ul>
-                <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-                <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                <li><a href="#Gallery" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Gallery</span></a></li>
-                <li><a href="#project" class="nav-link scrollto"><i class="bx bx-server"></i> <span>project</span></a></li>
-                <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-            </ul>
-        </nav><!-- .nav-menu -->
-
-    </header><!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex flex-column justify-content-center">
-        <div class="container" data-aos="zoom-in" data-aos-delay="100">
-        
-            <!--logo--->
-        <!-- <a href="#main"><img src="assets/img/yap@logo.png" width="250" height="100"></a> -->
-        <!-- logo_end -->
-
-            <h1 style="color: rgb(255, 255, 255);">Yeasin Arafat Payek</h1>
-            <p><b><span class="typed" data-typed-items="A Believer,Computer Engineer , Roboticist, Artificial intelligence Enthusiast"></span></b></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/yeasin-arafat-782604130/"><i class="fab fa-linkedin"></i></a>
-<!--                 <a href="https://leetcode.com/payek/"><img src="https://github.com/yap-yeasin/yap-yeasin/blob/main/linkdin.png?raw=true" width="48" height="48"></a> -->
-                <a href="https://github.com/YAP-Yeasin"><i class="fab fa-github"></i></a>
-<!--                 <a href="https://github.com/YAP-Yeasin"></i></a> -->
-                <a href="https://www.hackerrank.com/YoNowYAP"><i class="fab fa-hackerrank"></i></a>
-                <a href="https://www.youtube.com/channel/UCi-vo8JxWFeI_DJcjvwGnXw"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </section><!-- End Hero -->
-
-    <main id="main">
-
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>About</h2>
-                    <p> </p>         
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <img src="assets/img/y.jpeg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-8 pt-4 pt-lg-0 content">
-                        <!-- <h3>&amp; AI enthusiastic </h3> -->
-                        <h3>Roboticist &amp; Artificial intelligence enthusiastic </h3>
-                        <p class="fst-italic"> Enthusiastic Roboticist with experience working across Robot Intelligence, IoT, Machine Learning & Artificial Intelligence.
-                        Also, I feel habituated to building things from scratch. 
-                        I've built some Robots in different robot-fight competitions with my small team <a href="#X-Treme">(X-Treme)</a> and am looking for a role 
-                        where I can grow and continue to learn from other experienced team members. 
-                        </p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <!-- <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.yap-yeasin.github.io</span></li> -->
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>yap.yeasin@gmail.com</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+880155-----</span></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSC in CSE</span></li>
-                                    <!-- <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>yap.yeasin@gmail.com</span></li> -->
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Address:</strong> <span>Chittagong, Bangladesh</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- <p>12313213131321313213213213211</p> -->
-<!--                         <p class="fst-italic">Enthusiast Roboticist with experience working across Robot Intelligence, IoT, Machine Learning & Artificial intelligence.
-                            Also, I feel habituate to build things from scratches. 
-                            I've built some Robots in different robot-fight competitions with my small team <a href="#X-Treme">(X-Treme)</a> and looking for a role 
-                            where I can grow and continue to learn from other experienced team members. 
-                        </p> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End About Section -->
-        <!-- CV_button -->
-        <a href="https://github.com/yap-yeasin/Yeasin_Resume/blob/main/Yeasin%20Arafat.pdf" class="button_CV glow-on-hover" style="color: aquamarine;"><b>Resume Download</b></a>
-        <!-- <button class="glow-on-hover button_CV" type="button">Resume_Download</button> -->
-        <!-- CV-Button-END -->
-
-        <!-- ======= Facts Section ======= ------------------------------------------------------------->
-        <!-- <section id="facts" class="facts">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Facts</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="count-box">
-                            <i class="bi bi-emoji-smile"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                        <div class="count-box">
-                            <i class="bi bi-journal-richtext"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Projects</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-headset"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hours Of Support</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-award"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Awards</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section> -->
-        <!-- End Facts Section ----------------------------------------------------------------------------------->
-
-        <!-- ======= Skills Section ======= --------------------------------------------------------------------------->
-
-        <!-- <section id="skills" class="skills section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Skills</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row skills-content">
-
-                    <div class="col-lg-6">
-
-                        <div class="progress">
-                            <span class="skill">HTML <i class="val">100%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">CSS <i class="val">90%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">JavaScript <i class="val">75%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6">
-
-                        <div class="progress">
-                            <span class="skill">PHP <i class="val">80%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">WordPress/CMS <i class="val">90%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                        <div class="progress">
-                            <span class="skill">Photoshop <i class="val">55%</i></span>
-                            <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        End Skills Section -->
-
-
-        <!-- ======= Resume Section ======= -->
-        <section id="resume" class="resume">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Resume</h2>
-                    <p>Enthusiast Roboticist with experience working across Robot Intelligence, IoT, Machine Learning & Artificial intelligence.
-                        Also, I feel habituate to build things from scratches. 
-                        I've built some Robots in different robot-fight competitions with my small team <a href="#X-Treme" style="color: aqua;">(X-Treme)</a> and looking for a role 
-                        where I can grow and continue to learn from other experienced team members. </p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <!-- Work Experience--------------- -->
-                        <h3 class="resume-title">Work Experience</h3>
-                        <div class="resume-item pb-0">
-                            <h4>Organization : Taxes Zone-3</h4>
-                            <p><em>After My University admission , i get some free time before class start then i got this opportunity to utilize my free time . </em></p>
-                            <ul>
-                                <li><b>Position : </b>Data Entry Operator.</li>
-                                <li><b>Major Job Responsibility : </b> Return Entry </li>
-                                <li><b>Address : </b> CGO Building-2 (2nd Floor),Agrabad C/A,Chattogram.</li>
-                                <li><b>From : </b> 1 February 2017</li>
-                                <li><b>To : </b> 15 March 2017</li>
-                            </ul>
-                        </div>
-                        <!-- Skills------------------------- -->
-                        <h3 class="resume-title">Skills</h3>
-                        <div class="resume-item">
-                            <h4>Technical Skills</h4>
-                            <ul>
-                                <li><b>Programming Skills : </b>C,Python</li>
-                                <li><b>Web Programming : </b>Html ,Css</li>
-                                <li><b>Micro-controller Programming : </b> AVR, ATmega </li>
-                                <li><b>Development board : </b> Arduino, Raspberry pi, ESP8266 ... </li>
-                                <li><b>Operating System : </b> Linux(Debian), Windows (7,10)</li>
-                                <li><b>Embedded system analysis & design</b></li>
-                                <li><b>Internet Of Things</b></li>
-                                <li><b>Graphical :</b>Adobe Photoshop , Adobe Premiere Pro</li>
-                                <!-- <li><b>demo :</b> text</li> -->
-                            </ul>
-                        </div>
-
-
-                        <!-- Education------------------- -->
-                        <h3 class="resume-title">Education</h3>
-                        <div class="resume-item">
-                            <h4>Bachelor of Computer science and engineering</h4>
-                            <ul>
-                                <li><b>Institution : </b>International Islamic University Chittagong, Bangladesh. </li>
-                                <li><b>Session : </b>2017 - 2021</li>
-                                <li><b>Passing Year:</b> 2022</li>
-                            </ul>
-                        </div>
-                        <div class="resume-item">
-                            <h4>Higher Secondary Certificate</h4>
-                            <ul>
-                                <li><b>Institution : </b>Dewanhat City Corporation College ,Chittagong, Bangladesh.</li>
-                                <li><b>Session : </b>2014 - 2015</li>
-                                <li><b>Passing Year:</b> 2016</li>
-                                <li><b>Group : </b> Science</li>
-                            </ul>
-
-                        </div>
-                        <div class="resume-item">
-                            <h4>Secondary School Certificate</h4>
-                            <ul>
-                                <li><b>Institution : </b>Agrabad Govt. Colony High School,Chittagong, Bangladesh.</li>
-                                <li><b>Session : </b>2012 - 2013</li>
-                                <li><b>Passing Year:</b> 2014</li>
-                                <li><b>Group : </b> Science</li>
-                            </ul>
-                        </div>
-
-                        <!-- Projects------------------- -->
-                        <h3 class="resume-title">Projects</h3>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">Obstacle Avoiding Car (Fully Autonomous).</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">Sumo Bot (Fully Autonomous Fighting Bot).</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">RC Based Fighting Robot, We made many of them based on requirement.</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">Arduino based self-balancing Drone.</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">Semi-Autonomous GPS based Drone by the help of ArduCopter.</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">Infrared sensors based Line Following Robot using Arduino Uno.</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">2 Axis Plotter Pen CNC Machine using Arduino Uno.</h4>
-                        </div>
-                        <div class="resume-item">
-                            <h4 style="color: rgb(255, 255, 255);">Human Control Soccerbot.</h4>
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-lg-6">
-                        <h3 class="resume-title">Participated & Achievement</h3>
-                        <!-- 1st layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>SUST CSE Carnival</h4>
-                            <ul>
-                                <li><b>Organizer : </b>Shahjalal University of Science and Technology </li>
-                                <li><b>Year : </b>2017</li>
-                                <li><b>Section : </b>Robot-fight</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Semi-Finalist </li>
-                            </ul>
-                        </div>
-                         <!-- 2nd  layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>IEEE SPECTRA</h4>
-                            <ul>
-                                <li><b>Organizer : </b>International Islamic University Chittagong, Chittagong. </li>
-                                <li><b>Year : </b>2017</li>
-                                <li><b>Section : </b>Robot-fight</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Champion</li>
-                            </ul>
-                        </div>
-                         <!-- 3rd layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>IIUC TECHFESTA</h4>
-                            <ul>
-                                <li><b>Organizer : </b>International Islamic University Chittagong, Chittagong. </li>
-                                <li><b>Year : </b>2017</li>
-                                <li><b>Section : </b>Robot-fight</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Runner-up</li>
-                            </ul>
-                        </div>
-                         <!-- 4th layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>IIUC EEE DAY</h4>
-                            <ul>
-                                <li><b>Organizer : </b>International Islamic University Chittagong, Chittagong.</li>
-                                <li><b>Year : </b>2018</li>
-                                <li><b>Section : </b>Embedded System Design</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> 2nd Runner-up</li>
-                            </ul>
-                        </div>
-                         <!-- 5th layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>MIST ROBOLUTION</h4>
-                            <ul>
-                                <li><b>Organizer : </b>Military Institute of Science and Technology.</li>
-                                <li><b>Year : </b>2018</li>
-                                <li><b>Section : </b>Robot-fight</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Semi-Finalist</li>
-                            </ul>
-                        </div>
-                         <!-- 6th  layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>BUET ROBOFIESTA</h4>
-                            <ul>
-                                <li><b>Organizer : </b>Bangladesh University of Engineering and Technology  </li>
-                                <li><b>Year : </b>2018</li>
-                                <li><b>Section : </b>Robot-fight</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Semi-Finalist</li>
-                            </ul>
-                        </div>
-                         <!-- 7th layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>IIUC CSE FEST</h4>
-                            <ul>
-                                <li><b>Organizer : </b>International Islamic University Chittagong, Chittagong </li>
-                                <li><b>Year : </b>2019</li>
-                                <li><b>Section : </b>Idea Generation</li>
-                                <li><b>Idea : </b> Fully automated Fire Security System</li>
-                            </ul>
-                        </div>
-                         <!-- 8th layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>IIUC EEE FEST</h4>
-                            <ul>
-                                <li><b>Organizer : </b>International Islamic University Chittagong, Chittagong </li>
-                                <li><b>Year : </b>2019</li>
-                                <li><b>Section : </b>Robot-fight( Soccerbot )</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Champion</li>
-                            </ul>
-                        </div>
-                        <!-- 9th layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>BAIUST CSE Fest</h4>
-                            <ul>
-                                <li><b>Organizer : </b>Bangladesh Army International University of Science and Technology </li>
-                                <li><b>Year : </b>2019</li>
-                                <li><b>Section : </b>Robot-fight( Soccerbot )</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b> Semi-Finalist</li>
-                            </ul>
-                        </div>
-                        <!-- 10th layer---------------------- -->
-                        <div class="resume-item">
-                            <h4>IIUC TECHFEST</h4>
-                            <ul>
-                                <li><b>Organizer : </b>International Islamic University Chittagong, Chittagong </li>
-                                <li><b>Year : </b>2020</li>
-                                <li><b>Section : </b>Robot-fight</li>
-                                <li style="color: rgb(184, 59, 233);" ><b style="color: rgb(255, 255, 255);">Achievement:</b>  2nd Runner-up</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- End Resume Section -->
-
-        <!-- ======= Gallery / Gallery Section ======= -->
-        <section id="Gallery" class="portfolio section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Gallery</h2>
-                    <p style="color: aqua;"> <b>" Things end but memories last forever. "</b></p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">Robot</li>
-                            <li data-filter=".filter-card">X-Treme</li>
-                            <li data-filter=".filter-web">Personal</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>SUST Carnival</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SUST Carnival"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest Robot Repairing"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>TecH Fest 2020</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="TecH Fest 2020"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro11.jpeg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Obstacle Avoiding Car</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro11.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="My friend (Shuvo)and I build this robot in early 2017 "><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Robo Socer</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Robo Socer"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>EEE Day</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="EEE Day"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Repairing robot"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>EEE Day</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="EEE Day"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>MIST ROBOLUTION</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MIST ROBOLUTION"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest Robot Repairing"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>EEE DAY </h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="EEE DAY Robo-scocer"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>IEEE SPECTRA</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="IEEE SPECTRA"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>BAIUST</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="BAIUST"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest Final"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="With My friend"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Personal ---------------------------------->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/personal/per9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>EEE Day </h4>
-                                <!-- <p>Web</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/personal/per9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="EEE Day"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest 1st round"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>IEEE SPECTRA</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="IEEE SPECTRA"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest Final"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>SUST CSE Carnival</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SUST CSE Carnival"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Robot ------------------------------------------------>
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/Robot/ro10.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>IEEE SPECTRA</h4>
-                                <!-- <p>App</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/Robot/ro10.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="IEEE SPECTRA 1st round"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>SUST CSE Carnival</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SUST CSE Carnival"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- Team----------------------------- -->
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/team/t11.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Techfest</h4>
-                                <!-- <p>Card</p> -->
-                                <div class="portfolio-links">
-                                    <a href="assets/img/team/t11.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Techfest"><i class="bx bx-plus"></i></a>
-                                    <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Gallery Details"><i class="bx bx-link"></i></a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-            </div>
-        </section>
-        <!-- End Gallery Section -->
-
-        <!-- ======= project Section ======= -->
-        <section id="project" class="project">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Projects</h2>
-                    <p></p>
-                    <!-- <h3>X-Treme</h3> -->
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box-1">
-                            <h3><b>Obstacle Avoiding Car</b></h3>
-                            <h5 style="color: aqua;">Fully Autonomous</h5>
-                            <p> My friend ( Shuvo )and I build this robot in early 2017 after admitting our university. In this project we use ultrasonic sensor for detecting the object . we use Arduino Uno which is a ATmega328 based micro-controller board .
-                            </p>
-                            <!-- <a href="assets/img/pro/d1.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fully Autonomous Obstacle Avoiding Car"><i class="bx bx-plus"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon-box-2">
-                            <h3><b>Sumo Bot</b></h3>
-                            <h5 style="color: aqua;" >Fully Autonomous Fighting Bot</h5>
-                            <p >As a Team that's our first project. This robot is a fully autonomous Fighting bot .It's a updated version of our first project which can make his decision itself .To find the opponent we use two type of sensor one is ultrasonic sensor another one is Infrared sensor.
-                            </p>
-                            <!-- <a href="assets/img/pro/d1.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="As a Team that's our first project . This robot is a fully autonomous Fighting bot .It's a updated version of our first project which can make his decision itself .To find the opponent we use two type of sensor one is ultrasonic sensor another one is Infrared sensor."><i class="bx bx-plus"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box-3">
-                            <h3><b>RC Based Fighting Robot</b></h3>
-                            <h5 style="color: aqua;" >Human control Fighting Robot</h5>
-                            <p>Basically, we (X-Treme) made this type of robot for the Battle bot competition. We made various types of robots based on the Requirement like weight 6-15 kg.</p>
-                            <!-- <a href="assets/img/pro/w6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Human control Fighting Robot.Basically we (X-Treme) made this type robot for the Battle bot competition . We made various type of robot based on the Requirement like weight 6-15 kg."><i class="bx bx-plus"></i></a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box-4">
-                            <h3><b>Arduino based Drone</b></h3>
-                            <h5 style="color: aqua;" >Human Controntrol self-balancing Drone</h5>
-                            <p>Arduino based Human control drone which can balance itself.For control we use FS-CT6B Radio controller.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon-box-5">
-                            <h3><b>GPS based Drone</b></h3>
-                            <h5 style="color: aqua;" >Semi-Autonomous GPS based Drone using ArduCopter</h5>
-                            <p>This drone is an updated version of our first drone. This drone has many function like it can fly with the help of the GPS, etc.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box-6">
-                            <h3><b>Line Following Robot</b></h3>
-                            <h5 style="color: aqua;" >Autonomous</h5>
-                            <p>Infrared sensors-based Obstacle Avoiding Line Following Robot using Arduino Uno.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box-7">
-                            <h3><b>Soccerbot</b></h3>
-                            <h5 style="color: aqua;" >Human Control Soccerbot</h5>
-                            <p>Basically, we (X-Treme) made this type of robot for a soccer bot competition.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box-8">
-                            <h3><b>CNC Machine</b></h3>
-                            <h5 style="color: aqua;" > 2 Axis Plotter Pen CNC Machine using Arduino Uno.</h5>
-                            <p>We have used Arduino Uno as the Microcontroller to build this CNC Machine.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End project Section -->
-
-        <!-- ======= Testimonials / X-Treme Section ======= -->
-        <section id="X-Treme" class="testimonials section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>X-Treme</h2>
-                </div>
-
-                <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/y.jpeg" class="testimonial-img" alt="">
-                                <h3 style="color: aquamarine;">Yeasin Arafat Payek</h3>
-                                <!-- <h4></h4> -->
-                                <h4>Project Manager ,mPair Technologies Ltd. </h4> 
-                                <h4>Team Lead &amp; Founder of X-Treme </h4> 
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Led the end-to-end delivery of a multi-module SaaS platform, overseeing the full lifecycle from discovery to nationwide release. 
-                                    I served as the primary bridge between technical teams and stakeholders, translating complex academic, financial, and operational 
-                                    requirements into actionable project roadmaps. By implementing a modular, configurable architecture, I optimised resources for scalability 
-                                    across diverse environments, ensuring all deliverables met rigorous quality standards while staying aligned with timeline, scope, and stakeholder expectations.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/shovo.jpeg" class="testimonial-img" alt="">
-                                <h3 style="color: aquamarine;" >Md. Monjurul Hoque Shuvo</h3>
-                                <h4>Software Engineer at Field Nation</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    He's the main programmer in our robotics team (X-Treme). A really hard-working, enthusiastic, competitive programmer. He's very skilled at problem-solving and algorithm design. 
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="assets/img/nahian.jpeg" class="testimonial-img" alt="">
-                                <h3 style="color: aquamarine;" >Sultan Mahmud Nahian</h3>
-                                <h4>M.Sc. in AI (Pursuing) at Friedrich Alexander University, Germany</h4>
-                                <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    He's also a programmer in our robotics team (X-Treme). A really hard-working, enthusiastic Artificial intelligence. He's very skilful at implementing Machine learning algorithm as well as Data Visualization.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- End testimonial item -->
-
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-        </section><!-- End Testimonials Section -->
-
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Contact</h2>
-                </div>
-
-                <div class="row mt-1">
-
-                    <div class="col-lg-4">
-                        <div class="info">
-                            <div class="address">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Location:</h4>
-                                <p>Agrabad,Chittagong</p>
-                            </div>
-
-                            <div class="email">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>yap.yeasin@gmail.com</p>
-                            </div>
-
-                            <div class="phone">
-                                <i class="bi bi-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+88015---------</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-8 mt-5 mt-lg-0">
-
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading... ... ...</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you for you time!</div>
-                            </div>
-                            <div class="text-center"><button type="submit" class="glow-on-hover" style="color: aqua;"><b>Send Message</b></button></div>
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Contact Section -->
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="container">
-            <h3>Yeasin Arafat Payek</h3>
-            <p>Thanks for your time</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a href="https://twitter.com/YapYeasin"><i class="fab fa-twitter"></i></a> -->
-                <a href="https://www.youtube.com/channel/UCi-vo8JxWFeI_DJcjvwGnXw"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/in/yeasin-arafat-782604130/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/YAP-Yeasin"><i class="fab fa-github"></i></a>
-                <a href="https://www.hackerrank.com/YoNowYAP"><i class="fab fa-hackerrank"></i></a>
-            </div>
-        </div>
-    </footer><!-- End Footer -->
-
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/purecounter/purecounter.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/typed.js/typed.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-
+<!--
+=====================  HOW TO EDIT THIS PAGE  =====================
+Visitors cannot see these notes. Edit this file, then upload it to GitHub (branch master).
+Photos live in assets/img/. Before you upload any photo, resize it to about 1600 px wide.
+
+TAB NAME ............ change the title line at the top of this file.
+ACCENT COLOR ........ change --hazard in the :root line of the CSS (now #27f5b4 = RGB 39, 245, 180).
+HERO TITLES ......... the typing words are in the script at the bottom: W=['Computer Engineer','Roboticist','AI Enthusiast'].
+SOCIAL LINKS ........ edit the href links in the hero and in the footer.
+ABOUT TEXT .......... edit the paragraphs inside the about section.
+
+ADD A PROJECT ....... copy one project block inside the Projects grid and paste it after the last one:
+  <article class="rv"><img src="assets/img/pro/NAME.jpg" alt="What the photo shows" loading="lazy" decoding="async"><div><h3>Project name</h3><p class="tag">Short label</p><p>One or two sentences, shown on the card.</p></div><template class="more"><p>Full description, shown on the full page when the card is clicked.</p><p>Add more paragraphs if you want.</p></template></article>
+  The card shows the photo and the short text. Clicking it opens a full page with the same photo on the left and the title, label and full description (the template part) on the right.
+  If you leave out the template part, the full page just repeats the short sentence.
+  Keep the template tag inside the article, after the closing div of the card text.
+  The left and right arrows on the full page move through the cards in the same order as the grid, so new projects are included automatically.
+
+ADD A RESEARCH PAPER  copy one block inside the Research list and paste it after the last one:
+  <article class="paper rv"><p class="tag">Journal name and year, or Unpublished study</p><h3>Paper title</h3><p>Short summary (optional)</p><a class="btn" href="https://doi.org/YOUR-DOI" target="_blank" rel="noopener">Read the paper</a></article>
+  For an unpublished study, delete the link (a class="btn"). For a paper with no summary, delete the summary paragraph.
+
+ADD A TEAM PHOTO .... in the X-Treme section copy one image line and change the file name:
+  <img src="assets/img/team/t1.jpg" alt="X-Treme team photo" loading="lazy" decoding="async">
+
+ADD A GALLERY ALBUM . see the long note above the line var A=[ in the script at the bottom.
+
+ADD A NEW SECTION ... copy a whole section block, give it a new id, then add a menu link in the nav at the top:
+  <li><a href="#your-id">Menu name</a></li>
+====================================================================
+-->
+<div class="progress" aria-hidden="true"></div>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">YAP</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#x-treme">X-Treme</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <h1><span class="w"><span>Yeasin</span></span> <span class="w"><span>Arafat</span></span> <span class="w"><span>Payek</span></span></h1>
+    <p class="role fi" style="--t:.5s" aria-label="Computer Engineer, Roboticist, AI Enthusiast"><span id="typed" aria-hidden="true">Computer Engineer &middot; Roboticist &middot; AI Enthusiast</span><span class="caret" aria-hidden="true"></span></p>
+    <div class="cta fi" style="--t:.65s">
+      <a class="btn fill" href="#projects">View projects</a>
+      <a class="btn" href="#x-treme">Meet X-Treme</a>
+    </div>
+    <div class="links fi" style="--t:.8s">
+      <a href="https://github.com/YAP-Yeasin" rel="noopener"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/yeasin-arafat-782604130/" rel="noopener"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>LinkedIn</a>
+      <a href="https://www.hackerrank.com/YoNowYAP" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0v24h24V0zm9.95 8.002h1.805c.061 0 .111.05.111.111v7.767c0 .061-.05.111-.11.111H9.95c-.061 0-.111-.05-.111-.11v-2.87H7.894v2.87c0 .06-.05.11-.11.11H5.976a.11.11 0 01-.11-.11V8.112c0-.06.05-.11.11-.11h1.806c.061 0 .11.05.11.11v2.869H9.84v-2.87c0-.06.05-.11.11-.11zm2.999 0h5.778c.061 0 .111.05.111.11v7.767a.11.11 0 01-.11.112h-5.78a.11.11 0 01-.11-.11V8.111c0-.06.05-.11.11-.11z"/></svg>HackerRank</a>
+      <a href="https://www.youtube.com/channel/UCi-vo8JxWFeI_DJcjvwGnXw" rel="noopener"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/></svg>YouTube</a>
+      <a href="mailto:yap.yeasin@gmail.com"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>Email</a>
+    </div>
+  </div>
+</header>
+<div class="stripe" aria-hidden="true"><i></i></div>
+
+<main>
+<section id="about">
+  <div class="wrap about rv">
+    <img src="assets/img/y.jpeg" alt="Portrait of Yeasin Arafat Payek" width="560" height="700" loading="lazy" decoding="async">
+    <div>
+      <h2>About</h2>
+      <p class="big">I'm someone who loves learning and exploring new ideas. What interests me most is understanding how different things connect, whether it's technology, business, education, psychology, design, or the way people work together. I often find myself exploring topics outside my profession simply because I'm curious and enjoy seeing the bigger picture.</p>
+      <p>Over the years, I've worked on projects in technology, education, and business, and I've learned that the best solutions rarely come from looking at a problem from only one angle. I enjoy bringing together different perspectives, asking questions, and finding practical ways to turn ideas into reality.</p>
+      <p>My hands-on side started with small Arduino builds at university and grew into combat robots, drones and autonomous machines with my team, X-Treme. Now I'm learning deep learning, because I want the machines I build to do more than follow instructions.</p>
+      <p>I value both independent thinking and collaboration. Sometimes I enjoy diving deep into a problem on my own, and other times I enjoy exchanging ideas with others and learning from their experiences. Every project, challenge, and conversation is an opportunity to learn something new.</p>
+      <p>At the end of the day, I'm driven by curiosity, continuous growth, and the desire to build things that create real value for people.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <!-- To add a project, see HOW TO EDIT at the top of the body. -->
+    <div class="proj">
+      <article class="rv"><img src="assets/img/pro/w6.jpg" alt="RC fighting robot" loading="lazy" decoding="async"><div><h3>RC Fighting Robots</h3><p class="tag">Human-controlled</p><p>Robots for battle bot competitions, built to each event's requirements such as weight class.</p></div><template class="more"><p>Human-controlled fighting robots built by X-Treme for battle bot competitions.</p><p>We build different robots to match each event's requirements, for example weight classes from 6 kg to 15 kg.</p></template></article>
+      <article class="rv"><img src="assets/img/pro/d2.jpeg" alt="Autonomous sumo bot" loading="lazy" decoding="async"><div><h3>Sumo Bot</h3><p class="tag">Fully autonomous</p><p>Our team's first project, then upgraded into a fully autonomous fighting bot.</p></div><template class="more"><p>This was our team's first project. We later upgraded it into a fully autonomous fighting bot that makes its own decisions.</p><p>To find the opponent it uses two types of sensors: an ultrasonic sensor and an infrared sensor.</p></template></article>
+      <article class="rv"><img src="assets/img/pro/dro1.jpg" alt="Arduino drone" loading="lazy" decoding="async"><div><h3>Drones</h3><p class="tag">Arduino &middot; ArduCopter</p><p>A self-balancing Arduino drone flown with an FS-CT6B radio, and a semi-autonomous GPS drone on ArduCopter.</p></div><template class="more"><p>The first drone is Arduino based and self-balancing. It is flown by hand with an FS-CT6B radio controller.</p><p>The second is an updated, semi-autonomous GPS drone built on ArduCopter. It can fly with the help of GPS and has more functions than the first.</p></template></article>
+      <article class="rv"><img src="assets/img/pro/d1.jpeg" alt="Obstacle avoiding car" loading="lazy" decoding="async"><div><h3>Obstacle Avoiding Car</h3><p class="tag">Fully autonomous</p><p>Built with a friend in early 2017. An ultrasonic sensor detects obstacles so the car steers around them.</p></div><template class="more"><p>My friend Shuvo and I built this robot in early 2017, after joining university.</p><p>An ultrasonic sensor detects objects in its path, and an Arduino Uno, an ATmega328 based microcontroller board, runs the robot.</p></template></article>
+      <article class="rv"><img src="assets/img/pro/line.jpg" alt="Line following robot" loading="lazy" decoding="async"><div><h3>Line Following Robot</h3><p class="tag">Arduino Uno</p><p>Infrared sensors follow the line, with obstacle avoidance on top.</p></div><template class="more"><p>An autonomous line-following robot that also avoids obstacles.</p><p>It uses infrared sensors and an Arduino Uno.</p></template></article>
+      <article class="rv"><img src="assets/img/pro/socer.png" alt="Soccer bot" loading="lazy" decoding="async"><div><h3>Soccer Bot</h3><p class="tag">Human-controlled</p><p>Built by X-Treme for a soccer bot competition.</p></div><template class="more"><p>A human-controlled robot built by X-Treme for a soccer bot competition.</p></template></article>
+      <article class="rv"><img src="assets/img/pro/CNC.png" alt="Pen plotter CNC machine" loading="lazy" decoding="async"><div><h3>CNC Pen Plotter</h3><p class="tag">2-axis &middot; Arduino Uno</p><p>A two-axis plotter that draws with a pen, driven by an Arduino Uno.</p></div><template class="more"><p>A two-axis CNC pen plotter that draws with a pen.</p><p>It uses an Arduino Uno as its microcontroller.</p></template></article>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <!-- To add a research paper, see HOW TO EDIT at the top of the body. -->
+    <div class="papers">
+      <article class="paper rv">
+        <p class="tag">Journal article, IEEE Transactions on Instrumentation and Measurement, 2025</p>
+        <h3>Machine Learning-Optimized Metamaterial Sensor for Real-Time Insoluble Particle Position Monitoring in Multiphase Oil Flow</h3>
+        <a class="btn" href="https://doi.org/10.1109/TIM.2024.3500059" target="_blank" rel="noopener">Read the paper</a>
+      </article>
+      <article class="paper rv" style="--i:1">
+        <p class="tag">Unpublished study</p>
+        <h3>Deep learning based artificial vision analysis system using a single camera</h3>
+        <p>A framework for outdoor visual analysis and navigation. It uses YOLO-V4 for object detection, MediaPipe for pose estimation, an LSTM for human movement analysis and DeepFace for emotion analysis. Traffic lights are found with color detection and faces with Haar cascade and KNN, while an ultrasonic sensor on servo motors measures distance. Testing reached 84.83% precision across 95 classes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="x-treme">
+  <div class="wrap team rv">
+    <h2>X-Treme</h2>
+    <p>X-Treme is the small robotics team I build with. We design and build autonomous and remote-controlled robots for battle bot, sumo and soccer bot competitions.</p>
+    <div class="shots team-shots">
+      <img src="assets/img/team/t1.jpg" alt="X-Treme team photo 1" loading="lazy" decoding="async">
+      <img src="assets/img/team/t3.jpg" alt="X-Treme team photo 2" loading="lazy" decoding="async">
+      <img src="assets/img/team/t5.jpg" alt="X-Treme team photo 3" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2>Gallery</h2>
+    <p class="sub">Albums from the workshop, competitions and the people behind them. Select an album to browse.</p>
+    <div class="albums" id="albums"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Yeasin Arafat Payek</span>
+    <span class="links" style="margin:0">
+      <a href="https://github.com/YAP-Yeasin" rel="noopener"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/yeasin-arafat-782604130/" rel="noopener"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>LinkedIn</a>
+      <a href="mailto:yap.yeasin@gmail.com"><svg class="ic" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>Email</a>
+    </span>
+  </div>
+</footer>
+
+<dialog id="pj" aria-label="Project details">
+  <div class="pj-top"><button id="pjx" type="button">&larr; Back to projects</button><span id="pjc"></span></div>
+  <div class="pj-body">
+    <div class="pj-img"><button class="pj-nav" id="pjp" type="button" aria-label="Previous project">&lsaquo;</button><img id="pji" alt=""><button class="pj-nav" id="pjn" type="button" aria-label="Next project">&rsaquo;</button></div>
+    <div class="pj-txt"><p class="tag" id="pjtag"></p><h3 id="pjh"></h3><div id="pjd"></div></div>
+  </div>
+</dialog>
+
+<dialog id="lb" aria-label="Photo album viewer">
+  <div class="lb-top"><span id="lbt"></span><button id="lbx" aria-label="Close album">&times;</button></div>
+  <div class="lb-main"><button id="lbp" aria-label="Previous photo">&lsaquo;</button><img id="lbi" alt=""><button id="lbn" aria-label="Next photo">&rsaquo;</button></div>
+  <div class="lb-th" id="lbth"></div>
+</dialog>
+
+<script>
+(function(){
+  var $=function(q){return document.querySelector(q)},all=function(q){return [].slice.call(document.querySelectorAll(q))};
+  $('#yr').textContent=new Date().getFullYear();
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,IO='IntersectionObserver' in window;
+
+  var ty=$('#typed');
+  if(ty&&!reduce){
+    var W=['Computer Engineer','Roboticist','AI Enthusiast'],wi=0,ci=0,del=false;
+    ty.textContent='';
+    (function tick(){
+      var w=W[wi],d=70;
+      if(!del){ci++;ty.textContent=w.slice(0,ci);if(ci===w.length){del=true;d=1500}}
+      else{ci--;ty.textContent=w.slice(0,ci);d=35;if(ci===0){del=false;wi=(wi+1)%W.length;d=350}}
+      setTimeout(tick,d);
+    })();
+  }
+
+  var bar=$('.progress');
+  function prog(){var m=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(m>0?scrollY/m:0)+')'}
+  addEventListener('scroll',prog,{passive:true});prog();
+
+  function seq(d,p,a,e){return a.map(function(n){return 'assets/img/'+d+'/'+p+n+(e||'.jpg')})}
+  // =====  HOW TO ADD A GALLERY ALBUM  =====
+  // 1. Before you upload, resize the photos to about 1600 px wide.
+  // 2. In your repo, make a folder for the album, for example assets/img/competitions/
+  //    and name the photos c1.jpg, c2.jpg, c3.jpg and so on.
+  // 3. Add one line to the list below. Put a comma at the end of the line before it.
+  //      {t:'Competitions',p:seq('competitions','c',[1,2,3,4,5])}
+  //    t = album title. seq(folder, file name start, list of numbers).
+  //    The files are expected to end in .jpg. For .png add a fourth value:
+  //      {t:'Competitions',p:seq('competitions','c',[1,2,3],'.png')}
+  // 4. If your photos have different names, list each path instead:
+  //      {t:'Trips',p:['assets/img/trips/beach.jpg','assets/img/trips/city.png']}
+  // 5. Each album needs at least 3 photos. The cover is made from the first 3,
+  //    and the photo count is filled in automatically.
+  // To remove an album, delete its line. To change the order, move its line up or down.
+  var A=[
+    {t:'Combat robots',p:seq('Robot','ro',[1,2,3,4,5,6,7,8,9,10]).concat(['assets/img/Robot/ro11.jpeg'])},
+    {t:'X-Treme team',p:seq('team','t',[1,2,3,4,5,6,7,8,9,11])},
+    {t:'Projects',p:['w6.jpg','d1.jpeg','d2.jpeg','dro1.jpg','line.jpg','socer.png','CNC.png'].map(function(f){return 'assets/img/pro/'+f})},
+    {t:'Moments',p:seq('personal','per',[2,3,4,5,6,7,8,9])}
+  ];
+  var box=$('#albums');
+  A.forEach(function(a,k){
+    var b=document.createElement('button');b.className='album rv';b.style.setProperty('--i',k);
+    b.setAttribute('aria-label','Open album '+a.t+', '+a.p.length+' photos');
+    b.innerHTML='<span class="stack">'+[2,1,0].map(function(i){return '<img src="'+a.p[i]+'" alt="" loading="lazy" decoding="async">'}).join('')+'</span><span class="meta"><b>'+a.t+'</b><small>'+a.p.length+' photos</small></span>';
+    b.addEventListener('click',function(){openAlbum(a,b)});
+    box.appendChild(b);
+  });
+
+  all('.proj article').forEach(function(el,k){el.style.setProperty('--i',k%3)});
+  var els=all('.rv');
+  if(IO){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){io.observe(el)})}
+  else els.forEach(function(el){el.classList.add('in')});
+
+  var links=all('nav ul a');
+  if(IO){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(function(a){var t=$(a.getAttribute('href'));if(t)so.observe(t)})}
+
+  var lb=$('#lb'),li=$('#lbi'),th=$('#lbth'),cur,idx=0,opener;
+  function show(i){
+    idx=(i+cur.p.length)%cur.p.length;
+    li.classList.remove('sw');void li.offsetWidth;
+    li.src=cur.p[idx];li.alt=cur.t+', photo '+(idx+1);li.classList.add('sw');
+    $('#lbt').textContent=cur.t+'  \u00b7  '+(idx+1)+' / '+cur.p.length;
+    [].forEach.call(th.children,function(b,k){b.classList.toggle('on',k===idx);if(k===idx)b.scrollIntoView({inline:'center',block:'nearest',behavior:reduce?'auto':'smooth'})});
+  }
+  function openAlbum(a,btn){
+    cur=a;opener=btn;th.innerHTML='';
+    a.p.forEach(function(s,k){var b=document.createElement('button'),im=new Image();b.setAttribute('aria-label','Photo '+(k+1));im.src=s;im.alt='';im.loading='lazy';b.appendChild(im);b.onclick=function(){show(k)};th.appendChild(b)});
+    document.body.classList.add('lock');lb.showModal();show(0);
+  }
+  $('#lbp').onclick=function(){show(idx-1)};
+  $('#lbn').onclick=function(){show(idx+1)};
+  $('#lbx').onclick=function(){lb.close()};
+  lb.addEventListener('close',function(){document.body.classList.remove('lock');if(opener)opener.focus()});
+  lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+  var x0=null;
+  li.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  li.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)show(idx+(d<0?1:-1));x0=null});
+  // Project cards: click to open the full-page view (photo left, description right)
+  var pj=$('#pj'),pOp;
+  all('.proj article').forEach(function(el){
+    var h=el.querySelector('h3'),box=el.querySelector('div'),v=document.createElement('span');
+    el.setAttribute('role','button');el.tabIndex=0;
+    el.setAttribute('aria-label','View details: '+(h?h.textContent:'project'));
+    v.className='vd';v.textContent='View details';if(box)box.appendChild(v);
+    el.addEventListener('click',function(){openProject(el)});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(el)}});
+  });
+  var pjList=all('.proj article'),pI=0;
+  function fillProject(i){
+    pI=(i+pjList.length)%pjList.length;
+    var el=pjList[pI],img=el.querySelector('img'),tag=el.querySelector('.tag'),tpl=el.querySelector('template.more'),d=$('#pjd'),pi=$('#pji'),tx=$('.pj-txt');
+    pi.classList.remove('sw');tx.classList.remove('sw');void pi.offsetWidth;
+    pi.src=img?img.getAttribute('src'):'';pi.alt=img?img.alt:'';
+    $('#pjtag').textContent=tag?tag.textContent:'';
+    $('#pjh').textContent=el.querySelector('h3').textContent;
+    d.innerHTML='';
+    if(tpl)d.appendChild(tpl.content.cloneNode(true));
+    else [].forEach.call(el.querySelectorAll('p:not(.tag)'),function(p){d.appendChild(p.cloneNode(true))});
+    $('#pjc').textContent=(pI+1)+' / '+pjList.length;
+    pi.classList.add('sw');tx.classList.add('sw');
+    tx.scrollTop=0;$('.pj-body').scrollTop=0;pOp=el;
+  }
+  function openProject(el){document.body.classList.add('lock');pj.showModal();fillProject(pjList.indexOf(el))}
+  $('#pjp').onclick=function(){fillProject(pI-1)};
+  $('#pjn').onclick=function(){fillProject(pI+1)};
+  pj.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')fillProject(pI-1);if(e.key==='ArrowRight')fillProject(pI+1)});
+  var px0=null,pim=$('#pji');
+  pim.addEventListener('touchstart',function(e){px0=e.touches[0].clientX},{passive:true});
+  pim.addEventListener('touchend',function(e){if(px0===null)return;var d=e.changedTouches[0].clientX-px0;if(Math.abs(d)>50)fillProject(pI+(d<0?1:-1));px0=null});
+  $('#pjx').onclick=function(){pj.close()};
+  pj.addEventListener('close',function(){document.body.classList.remove('lock');if(pOp)pOp.focus()});
+})();
+</script>
 </body>
 </html>
-
-
-
